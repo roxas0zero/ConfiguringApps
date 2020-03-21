@@ -8,7 +8,7 @@ namespace ConfiguringApps.Infrastructure
 {
     public class UptimeService
     {
-        private Stopwatch timer;
+        private readonly Stopwatch timer;
 
         public UptimeService()
         {

@@ -24,6 +24,7 @@ namespace ConfiguringApps
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<ContentMiddleware>();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

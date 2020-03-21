@@ -6,11 +6,11 @@ namespace ConfiguringApps.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly UptimeService _uptime;
+        private readonly UptimeService uptime;
 
         public HomeController(UptimeService uptime)
         {
-            _uptime = uptime;
+            this.uptime = uptime;
         }
 
         public IActionResult Index()
@@ -18,7 +18,7 @@ namespace ConfiguringApps.Controllers
             var model = new Dictionary<string, string>
             {
                 ["Message"] = "This is the Index action",
-                ["Uptime"] = $"{_uptime.Uptime}ms"
+                ["Uptime"] = $"{uptime.Uptime}ms"
             };
             return View(model);
         }

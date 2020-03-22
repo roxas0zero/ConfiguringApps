@@ -24,9 +24,12 @@ namespace ConfiguringApps
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<ErrorMiddleware>();
+            app.UseMiddleware<BrowserTypeMiddleware>();
+            app.UseMiddleware<ShortCircuitMiddleware>();
             app.UseMiddleware<ContentMiddleware>();
-            app.UseRouting();
 
+            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
